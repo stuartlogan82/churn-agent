@@ -1,0 +1,27 @@
+{
+  "name": "churn-agent",
+  "version": "1.0.0",
+  "description": "AI-powered churn prediction and retention system integrating Salesforce, OpenAI, and 8x8",
+  "private": true,
+  "workspaces": [
+    "services/event-listener",
+    "services/churn-prediction",
+    "services/orchestration"
+  ],
+  "scripts": {
+    "install-all": "npm install && npm install --workspaces",
+    "dev:listener": "npm run dev --workspace=services/event-listener",
+    "dev:prediction": "npm run dev --workspace=services/churn-prediction",
+    "dev:orchestration": "npm run dev --workspace=services/orchestration",
+    "dev:all": "concurrently \"npm run dev:listener\" \"npm run dev:prediction\" \"npm run dev:orchestration\"",
+    "start:listener": "npm start --workspace=services/event-listener",
+    "start:prediction": "npm start --workspace=services/churn-prediction",
+    "start:orchestration": "npm start --workspace=services/orchestration"
+  },
+  "keywords": ["churn", "salesforce", "ai", "retention", "8x8"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
